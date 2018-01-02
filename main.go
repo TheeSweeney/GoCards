@@ -11,6 +11,11 @@ func main() {
 		only use ':=' when assigning a value to a NEW variable
 		after var is initialized it could be reassigned as such
 			car = "Five of Diamonds"
+
+		Variables can be initialized and later assigned
+			var deckSize int
+			deckSize = 53
+		Variables can be initialized outside of a function, but cannot be assigned a value.
 	*/
 
 	/*
