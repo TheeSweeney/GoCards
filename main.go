@@ -5,7 +5,9 @@ import "fmt"
 func main() {
 	//var card string = "Ace of Spades"
 	//^^^long form method alternatively can be:
-	card := "Ace of Spades"
+	// card := "Ace of Spades"
+
+	card := newCard()
 	/*
 		^^^relying on Go compiler to infer that a var with the val "Ave of Spades" will be a string
 		only use ':=' when assigning a value to a NEW variable
@@ -31,4 +33,9 @@ func main() {
 					float64 - number with decimal
 	*/
 	fmt.Println(card)
+}
+
+func newCard() string {
+	//go required us to tell it what data type a function will return ^^^
+	return "Five of Diamonds"
 }
