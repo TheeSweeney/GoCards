@@ -7,7 +7,9 @@ func main() {
 	//^^^long form method alternatively can be:
 	// card := "Ace of Spades"
 
-	card := newCard()
+	cards := []string{newCard(), "Ace of Diamonds"}
+	cards = append(cards, "Six of Spades")
+
 	/*
 		^^^relying on Go compiler to infer that a var with the val "Ave of Spades" will be a string
 		only use ':=' when assigning a value to a NEW variable
@@ -32,7 +34,10 @@ func main() {
 					int - number
 					float64 - number with decimal
 	*/
-	fmt.Println(card)
+
+	for i, card := range cards {
+		fmt.Println(i, card)
+	}
 }
 
 func newCard() string {
