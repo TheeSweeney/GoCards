@@ -180,4 +180,14 @@ Type conversion
 		typeWeWant(valueWeHave)
 		[]byte("Hi there!") 
 			^ will convert the string "Hi there!" to a byteslice
+Testing
+	to make a new test, create a file ending in _test.go: 
+		deck_test.go
+	to run all tests, run command: 
+		go test
+	how do we know what tests to run? well, what do I care about? some examples:
+		after we make a new deck, we should have a deck of a known length
+		first card in the deck should be X, last card should be Y
+	whenever we id a func we want to test, we create a new func in the test file with the name Test and then file we are Testing	
+		func TestNewDeck
 
