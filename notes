@@ -62,7 +62,7 @@ Slice
 	A range of a slice can be selected using the syntax	
 
 		sliceName[startIndexIncluding:upToNotIncluding]
-		
+
 		so for the slice [1,2,3,4,5], slice[0:2] would return [1,2]
 		slice[:2] === slice[0:2]
 		slice[2:] === slice[2, slice.length + 1] ie from position to end of slice
@@ -75,5 +75,11 @@ For loops
     
     The := is used because technically each time the for loop iterates to the next element, it completely disregards the previous element and essentially starts from scratch. We are no reassigning "index" and "cards" each time, but they are created a new each iteration.
 
-
+Byte slice	
+	a string converted into byte and held within a slice - a computer friendly representation of a string
+Type conversion
+	used to take one type of value and convert it to another type. syntax
+		typeWeWant(valueWeHave)
+		[]byte("Hi there!") 
+			^ will convert the string "Hi there!" to a byteslice
 
