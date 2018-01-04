@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 type deck []string
@@ -65,9 +66,13 @@ func newDeckFromFile(filename string) deck {
 //swap current card and card at cards[randomNumber]
 
 func (d deck) shuffle() {
+	source := rand.NewSource(time.Now().UnixNano()) //using current time as a seed for the random number generator
+	r := rand.New(source)
+	//we are creating a more random number generator and then using it below instead of the standard Rand.Intn() funciton, since that functin uses the same seed every time - ie if this function is run multiple times it will always produce the same random order
+
 	for i := range d {
 		//^^^ we only care about the index, not the card at that index
-		newPosition := rand.Intn(len(d) - 1)
+		newPosition := r.Intn(len(d) - 1)
 
 		d[i], d[newPosition] = d[newPosition], d[i]
 	}
