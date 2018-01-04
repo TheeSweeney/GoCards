@@ -27,6 +27,7 @@ func newDeck() deck {
 
 	return cards
 }
+
 func (d deck) print() {
 	/*
 		^^^any variable of type "deck" now has access to "print" method
@@ -39,4 +40,12 @@ func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+
+func deal(d deck, handSize int) (deck, deck) {
+	//parameters must have their type specified
+	//the return values are in parens because we are telling Go that we are returning two values, both of type deck
+	return d[:handSize], d[handSize:]
+	//above, we are returning two separate return values
 }

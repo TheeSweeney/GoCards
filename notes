@@ -59,6 +59,13 @@ Slice
 
         note that append function does not modify the existing slice, but returns a new slice that we are then assigning back to the name "cards"
 
+	A range of a slice can be selected using the syntax	
+
+		sliceName[startIndexIncluding:upToNotIncluding]
+		
+		so for the slice [1,2,3,4,5], slice[0:2] would return [1,2]
+		slice[:2] === slice[0:2]
+		slice[2:] === slice[2, slice.length + 1] ie from position to end of slice
 For loops
     for index, card := range cards{
         fmt.PrintIn(card)
