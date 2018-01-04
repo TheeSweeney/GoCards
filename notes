@@ -55,7 +55,7 @@ Slice
         after := start with a set of empty brackets, followed immediately by the data type that will be in the slice, and then brackets containing the elements to be found in the slice. Note that in the above example, a string is both created on the fly ("Ace of Diamonds") and created using a function (newCard() - we assume this funtion returns a string)
     To add elements to the cards slice:
 
-        card = append(cards, "Six of Spades")
+        cards = append(cards, "Six of Spades")
 
         note that append function does not modify the existing slice, but returns a new slice that we are then assigning back to the name "cards"
 

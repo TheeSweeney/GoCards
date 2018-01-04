@@ -9,6 +9,24 @@ type deck []string
 
 //though not precisely, the above line can be understood as creating a new type that will extend functionality on top of slices (this is an OO understanding of what is going on)
 
+func newDeck() deck {
+	//this will not be a receiver function because when this is called we will not already be working with a deck
+	cards := deck{}
+
+	cardSuits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
+
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value + "of" + suit)
+		}
+	}
+
+	// "_" is used above because initially the values were "i" and "j", but we never used them
+	// "_" says 'I know there is a variable here, but I really don't care what its value is'
+
+	return cards
+}
 func (d deck) print() {
 	/*
 		^^^any variable of type "deck" now has access to "print" method
